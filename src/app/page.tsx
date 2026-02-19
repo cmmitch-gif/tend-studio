@@ -33,7 +33,7 @@ export default function HomePage() {
           {/* Illustration — right */}
           <div className="flex flex-1 justify-center">
             <Image
-              src="/illustrations/Hero-email-board.png"
+              src="/illustrations/Hero-email-board.svg"
               alt="Person organising email content on a board"
               width={520}
               height={400}
