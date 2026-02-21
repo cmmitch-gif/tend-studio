@@ -31,9 +31,9 @@ export default function BrandBar() {
                 <Image
                   src={brand.logo}
                   alt={brand.name}
-                  width={100}
-                  height={32}
-                  className="h-6 w-auto object-contain"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto object-contain"
                 />
               ) : (
                 brand.name
