@@ -18,6 +18,20 @@ body {
   background-color: var(--color-cream);
   color: var(--color-charcoal);
   font-family: var(--font-sans);
+  cursor: url("/cursors/arrow-mint.svg") 6 4, auto;
+}
+
+a, button, [role="button"], input[type="submit"], select, label {
+  cursor: url("/cursors/pointer-hand-mint.svg") 13 4, pointer;
+}
+
+/* Button hover states for terracotta buttons */
+a.bg-terracotta:hover,
+button.bg-terracotta:hover,
+.bg-terracotta:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
 }
 
 /* Smooth scrolling */
