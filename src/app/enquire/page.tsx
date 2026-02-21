@@ -28,7 +28,7 @@ export default function EnquirePage() {
           {/* Illustration — right */}
           <div className="flex flex-1 justify-center md:justify-end">
             <Image
-              src="/illustrations/closer-look.svg"
+              src="/illustrations/lets-chat.svg"
               alt="Two people communicating via screens"
               width={360}
               height={280}

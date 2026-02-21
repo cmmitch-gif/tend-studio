@@ -129,8 +129,8 @@ export default function HomePage() {
       </section>
 
       {/* ===== BUILT FOR BRANDS THAT THINK LONG-TERM ===== */}
-      <section className="bg-warm-white px-6 py-20 md:px-10 md:py-28">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 md:flex-row md:gap-16">
+      <section className="bg-cream px-6 py-20 md:px-10 md:py-28">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 rounded-[20px] bg-warm-white p-8 shadow-[0_4px_16px_rgba(0,0,0,0.06)] md:flex-row md:gap-16 md:p-12">
           {/* Text — left */}
           <div className="flex-1">
             <h2 className="mb-6 text-3xl font-bold text-forest md:text-4xl">
@@ -167,7 +167,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== HOW IT WORKS ===== */}
-      <section className="bg-warm-white px-6 py-20 md:px-10 md:py-28">
+      <section className="bg-cream px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-16 text-center text-3xl font-bold text-forest md:text-4xl">
             How it works
@@ -208,33 +208,33 @@ export default function HomePage() {
       </section>
 
       {/* ===== FINAL CTA ===== */}
-      <section className="bg-forest px-6 py-20 md:px-10 md:py-28">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 md:flex-row md:gap-16">
-          {/* Illustration — left */}
+      <section className="bg-cream px-6 py-20 md:px-10 md:py-28">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 md:flex-row md:items-center md:gap-12">
+          {/* Illustration — left on cream background */}
           <div className="flex flex-1 justify-center">
             <Image
               src="/illustrations/ready-to-get-more.svg"
               alt="Ready to get more from your email"
               width={360}
               height={280}
-              className="w-full max-w-xs"
+              className="w-full max-w-sm"
             />
           </div>
 
-          {/* Text — right */}
-          <div className="flex-1 text-center md:text-left">
+          {/* Green card — right */}
+          <div className="flex-1 rounded-[20px] bg-forest px-8 py-12 md:px-12 md:py-16">
             <h2 className="mb-5 text-3xl font-bold text-cream md:text-4xl">
               Ready to get more from your email?
             </h2>
-            <p className="mb-8 text-base leading-relaxed text-cream/90">
+            <p className="mb-8 max-w-md text-base leading-relaxed text-cream/90">
               Whether you&apos;re starting from scratch or want to make what you&apos;ve got work
               harder — we&apos;d love to help.
             </p>
             <Link
-              href="/services"
-              className="inline-flex items-center gap-2 rounded-[14px] bg-cream px-8 py-3.5 text-sm font-semibold text-forest transition-all duration-200 hover:bg-warm-white hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
+              href="/enquire"
+              className="inline-flex items-center gap-2 rounded-[14px] bg-terracotta px-8 py-3.5 text-sm font-semibold text-cream transition-all duration-200 hover:bg-[#b5604a] hover:shadow-[0_4px_12px_rgba(200,112,90,0.35)] hover:-translate-y-0.5"
             >
-              See how we can help →
+              Get in touch →
             </Link>
           </div>
         </div>

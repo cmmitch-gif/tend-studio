@@ -157,7 +157,7 @@ export default function ServicesPage() {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="#"
-              className="inline-flex items-center gap-2 rounded-[14px] bg-terracotta px-8 py-3.5 text-sm font-semibold text-cream transition-all duration-200 hover:bg-terracotta/90 hover:shadow-[0_4px_12px_rgba(200,112,90,0.3)]"
+              className="inline-flex items-center gap-2 rounded-[14px] bg-terracotta px-8 py-3.5 text-sm font-semibold text-cream transition-all duration-200 hover:bg-[#b5604a] hover:shadow-[0_4px_12px_rgba(200,112,90,0.35)] hover:-translate-y-0.5"
             >
               Get your scorecard
             </a>

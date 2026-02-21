@@ -24,15 +24,17 @@ export default function Header() {
         <nav className="hidden items-center gap-8 md:flex">
           <Link
             href="/services"
-            className="text-sm font-medium text-charcoal transition-colors duration-200 hover:text-forest"
+            className="group relative text-sm font-medium text-charcoal transition-colors duration-200 hover:text-forest"
           >
             Services
+            <span className="absolute -bottom-1 left-0 h-[2px] w-0 rounded-full bg-forest transition-all duration-300 group-hover:w-full" />
           </Link>
           <Link
             href="/enquire"
-            className="text-sm font-medium text-charcoal transition-colors duration-200 hover:text-forest"
+            className="group relative text-sm font-medium text-charcoal transition-colors duration-200 hover:text-forest"
           >
             Contact
+            <span className="absolute -bottom-1 left-0 h-[2px] w-0 rounded-full bg-forest transition-all duration-300 group-hover:w-full" />
           </Link>
         </nav>
 
