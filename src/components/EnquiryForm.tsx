@@ -24,6 +24,8 @@ const findUsOptions = [
 export default function EnquiryForm() {
   const searchParams = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [service, setService] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -41,8 +43,23 @@ export default function EnquiryForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // For v1, just show confirmation. Can be upgraded to send email later.
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/enquire", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ service, name, email, website, message, findUs }),
+      });
+
+      if (!res.ok) throw new Error("Failed to send");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong — please try again or email us directly at hello@tendstudio.com.au");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -136,13 +153,20 @@ export default function EnquiryForm() {
         ))}
       </select>
 
+      {error && (
+        <p className="rounded-[12px] bg-red-50 px-4 py-3 text-sm text-red-700">
+          {error}
+        </p>
+      )}
+
       {/* Submit */}
       <div className="flex justify-end pt-2">
         <button
           type="submit"
-          className="inline-flex items-center gap-2 rounded-[14px] bg-forest px-8 py-3 text-sm font-semibold text-cream transition-all duration-200 hover:bg-forest/90 hover:shadow-[0_4px_12px_rgba(45,106,79,0.3)]"
+          disabled={loading}
+          className="inline-flex items-center gap-2 rounded-[14px] bg-forest px-8 py-3 text-sm font-semibold text-cream transition-all duration-200 hover:bg-forest/90 hover:shadow-[0_4px_12px_rgba(45,106,79,0.3)] disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          Send enquiry →
+          {loading ? "Sending…" : "Send enquiry →"}
         </button>
       </div>
     </form>
