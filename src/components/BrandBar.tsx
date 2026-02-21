@@ -1,12 +1,16 @@
 "use client";
 
-const placeholderLogos = [
-  "Brand One",
-  "Brand Two",
-  "Brand Three",
-  "Brand Four",
-  "Brand Five",
-  "Brand Six",
+import Image from "next/image";
+
+type Brand = { name: string; logo?: string };
+
+const brands: Brand[] = [
+  { name: "Arc'teryx", logo: "/brands/arcteryx.svg" },
+  { name: "Brand Two" },
+  { name: "Brand Three" },
+  { name: "Brand Four" },
+  { name: "Brand Five" },
+  { name: "Brand Six" },
 ];
 
 export default function BrandBar() {
@@ -18,12 +22,22 @@ export default function BrandBar() {
       <div className="relative">
         <div className="animate-marquee flex w-max items-center gap-16">
           {/* Duplicate logos for seamless loop */}
-          {[...placeholderLogos, ...placeholderLogos].map((name, i) => (
+          {[...brands, ...brands].map((brand, i) => (
             <div
               key={i}
               className="flex h-10 items-center justify-center rounded-[12px] bg-sage/20 px-8 text-sm font-medium text-warm-grey whitespace-nowrap"
             >
-              {name}
+              {brand.logo ? (
+                <Image
+                  src={brand.logo}
+                  alt={brand.name}
+                  width={100}
+                  height={32}
+                  className="h-6 w-auto object-contain"
+                />
+              ) : (
+                brand.name
+              )}
             </div>
           ))}
         </div>
